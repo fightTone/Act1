@@ -25,6 +25,7 @@ def edit():
 		x = line.split(',')
 		idnum = x[0]
 		if idnum == nput:
+			print "result: "+line
 			editwhat = raw_input("enter what you want to edit: \n-firstname\n-lastname\n\n>>>")
 			if editwhat == "firstname":
 				e_fname = raw_input("Enter changes: ")
@@ -34,7 +35,7 @@ def edit():
 				arr.append(x[0]+','+x[1]+','+e_lname+'\n')
 					
 		else:
-			print "not"
+			
 			arr.append(line)
 	file.close()
 	opt_del = open('names.csv', 'w')
@@ -56,7 +57,8 @@ def delete():
 		if idnum == nput:
 			print "DELETED"
 		else:
-			arr.append(x[0]+','+x[1]+','+x[2]+'\n')
+
+			arr.append(line)
 			print line
 
 	opt_del = open('names.csv', 'w')
